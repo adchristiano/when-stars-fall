@@ -1,0 +1,338 @@
+/* =====================================================
+   WHEN STARS FALL — Stylesheet
+   Off-white / deep purple / Cormorant Garamond
+   ===================================================== */
+
+:root {
+  --bg:           #F5F1E8;
+  --text:         #1A0B2E;
+  --text-muted:   #7B6B8A;
+  --purple-mid:   #4A2472;
+  --purple-dark:  #2E1450;
+  --purple-faint: #C8BFD8;
+  --divider:      #D4CCDF;
+  --correct:      #2D5A3D;
+  --wrong:        #7A2020;
+  --font:         'Cormorant Garamond', Georgia, serif;
+}
+
+/* ── Reset & Base ── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.85;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Constellation Counter ── */
+
+#constellation-counter {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--purple-mid);
+  z-index: 100;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+#stars-display {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+#stars-display.pulse {
+  animation: starPulse 0.7s ease;
+}
+
+@keyframes starPulse {
+  0%   { opacity: 1; }
+  30%  { opacity: 0.2; }
+  60%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* ── Main Layout ── */
+
+#game {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1.5rem 6rem;
+}
+
+#content {
+  width: 100%;
+  max-width: 640px;
+  transition: opacity 0.35s ease;
+}
+
+#content.fading {
+  opacity: 0;
+}
+
+/* ── Title Screen ── */
+
+.title-screen {
+  text-align: center;
+  padding: 4rem 0 3rem;
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.game-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 3.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Scene Headings ── */
+
+.scene-title {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.scene-location {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── Images ── */
+
+.scene-image-wrap {
+  margin: 2rem 0 2.25rem;
+  width: 100%;
+}
+
+.scene-image {
+  width: 100%;
+  display: block;
+  opacity: 0.92;
+}
+
+/* ── Prose ── */
+
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+p.italic-para {
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 2.25rem 0;
+  color: var(--purple-faint);
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  user-select: none;
+}
+
+/* ── Choices ── */
+
+.choices {
+  margin-top: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.choice-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--purple-mid);
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+
+  /* Animated underline */
+  background-image: linear-gradient(var(--purple-mid), var(--purple-mid));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease, color 0.2s ease;
+}
+
+.choice-btn:hover {
+  color: var(--purple-dark);
+  background-size: 100% 1px;
+}
+
+.choice-btn:focus-visible {
+  outline: 2px solid var(--purple-mid);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Quiz Block ── */
+
+.quiz-block {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--divider);
+}
+
+.quiz-constellation {
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--purple-mid);
+  margin-bottom: 1rem;
+}
+
+.quiz-question {
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-option {
+  background: none;
+  border: 1px solid var(--purple-faint);
+  border-radius: 2px;
+  padding: 0.65rem 1rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--purple-mid);
+  background-color: rgba(74, 36, 114, 0.04);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.correct {
+  border-color: var(--correct);
+  color: var(--correct);
+  background-color: rgba(45, 90, 61, 0.05);
+}
+
+.quiz-option.wrong {
+  border-color: var(--wrong);
+  color: var(--wrong);
+  background-color: rgba(122, 32, 32, 0.05);
+}
+
+/* ── Quiz Feedback ── */
+
+.quiz-feedback {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--divider);
+  animation: fadeIn 0.4s ease;
+}
+
+.feedback-correct p:first-child::before {
+  content: '✦ ';
+  color: var(--correct);
+  font-size: 0.8em;
+}
+
+/* ── Ending Screens ── */
+
+.ending-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.ending-title {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Fade-in animation ── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.scene-content > * {
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  html { font-size: 17px; }
+
+  #game {
+    padding: 3.5rem 1.25rem 5rem;
+  }
+
+  .game-title {
+    font-size: 2.2rem;
+  }
+
+  #constellation-counter {
+    top: 1rem;
+    right: 1.25rem;
+  }
+}
