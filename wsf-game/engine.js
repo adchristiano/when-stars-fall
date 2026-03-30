@@ -193,9 +193,14 @@ function processInline(text) {
 
 function renderChoices(choices) {
   if (!choices || !choices.length) return '';
-  let html = '<div class="choices">';
+
+  const isMulti = choices.length > 1;
+  const wrapClass = isMulti ? 'choices choices--multi' : 'choices choices--single';
+  const btnClass  = isMulti ? 'choice-btn--option'     : 'choice-btn--continue';
+
+  let html = `<div class="${wrapClass}">`;
   choices.forEach((choice, i) => {
-    html += `<button class="choice-btn" data-index="${i}">${choice.label}</button>`;
+    html += `<button class="${btnClass}" data-index="${i}">${choice.label}</button>`;
   });
   html += '</div>';
   return html;
@@ -212,7 +217,7 @@ function attachHandlers(sceneId) {
     return;
   }
 
-  document.querySelectorAll('.choice-btn').forEach(btn => {
+  document.querySelectorAll('.choice-btn--continue, .choice-btn--option').forEach(btn => {
     btn.addEventListener('click', () => {
       const idx = parseInt(btn.dataset.index, 10);
       const choice = scene.choices[idx];
@@ -263,7 +268,7 @@ function attachQuizHandlers(scene) {
       const feedbackClass = correct ? 'feedback-correct' : 'feedback-wrong';
       feedback.innerHTML = `<div class="${feedbackClass}">${renderText(feedbackText)}</div>
         <div class="choices">
-          <button class="choice-btn" id="quiz-continue">Continue</button>
+          <button class="choice-btn--continue" id="quiz-continue">Continue</button>
         </div>`;
 
       document.getElementById('quiz-continue').addEventListener('click', () => {
