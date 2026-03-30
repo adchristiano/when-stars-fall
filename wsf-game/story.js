@@ -2,7 +2,7 @@ const STORY = {
   'prologue': {
     title: 'Before the Story Begins',
     location: 'New York City — October 12th, 1853',
-    image: 'images/scene-00.png',
+    image: 'images/scene-00.jpeg',
     text: [
       '*On the night of October 12th, 1853, eleven zodiacal constellations fell from the sky above the eastern seaboard. Sailors in New York Harbour lost their bearings before dawn. The Hudson ran strange.*',
       '*The newspapers called it atmospheric. The scientists convened a committee. The Fox Sisters called it exactly what it was, and were not believed.*',
@@ -21,7 +21,7 @@ const STORY = {
   'scene-1': {
     title: 'Chapter One: The Client',
     location: 'Louisa\'s office, above Hartley\'s Books, Greenwich Village — November 3rd, morning',
-    image: 'images/scene-01.png',
+    image: 'images/scene-01.jpeg',
     text: [
       'The woman who comes to see me on the third of November is frightened of something specific, which is different from being grief-stricken, though she is performing the second to conceal the first.',
       'Her name is Helena Carver. Her husband, Charles, died three weeks ago at a séance on Bleecker Street. Heart failure, officially. She has the death certificate with her, which she shows me without being asked.',
@@ -46,7 +46,7 @@ const STORY = {
   'scene-2': {
     title: 'Chapter Two: Five Points',
     location: 'Mulberry Street, Five Points — November 3rd, afternoon',
-    image: 'images/scene-02.png',
+    image: 'images/scene-02.jpeg',
     text: [
       'I go directly. The Five Points is twenty minutes on foot if you know which streets to take, which I do — I grew up six blocks from here. I arrive before noon with nothing but my notebook and the address.',
       '---',
@@ -67,7 +67,7 @@ const STORY = {
   'scene-3': {
     title: 'Chapter Three: The Yards',
     location: 'Hudson River yards, lower Manhattan — November 3rd, late afternoon',
-    image: 'images/scene-03.png',
+    image: 'images/scene-03.jpeg',
     text: [
       'I almost don\'t go.',
       'I stand on West Street with the address in my notebook and think about my mother\'s room — the south window, the extra blanket — and what six weeks means in terms that are not abstract. The gift going dark doesn\'t just mean losing a skill. It means losing the income, and the income is the only thing standing between my mother and a worse room in a worse house. Then I step off the kerb and go, because the vision came without my consent and I have never managed to argue with the ones that arrive sideways.',
@@ -110,7 +110,7 @@ const STORY = {
   'scene-4': {
     title: 'Chapter Four: Miss Voss',
     location: 'The Voss private library, Gramercy Park — November 4th, past midnight',
-    image: 'images/scene-04.png',
+    image: 'images/scene-04.jpeg',
     text: [
       'He finds me at half past midnight. I\'m awake — lying in the dark, not sleeping — when he knocks.',
       'He\'s standing in the hallway with his coat and a quality of controlled alarm, both palms glowing steadily gold in the lamplight.',
@@ -145,7 +145,7 @@ const STORY = {
   'scene-5': {
     title: 'Chapter Five: Vesper',
     location: 'A rooftop, West 27th Street — November 5th, night',
-    image: 'images/scene-05.png',
+    image: 'images/scene-05.jpeg',
     text: [
       'Maren talks for nearly three hours. By the end I have eight pages of notes in her handwriting, a working theory about my gift\'s deterioration, and an address. She needs a thief. She knows one.',
       '---',
@@ -173,7 +173,7 @@ const STORY = {
   'scene-6': {
     title: 'Chapter Six: Leo',
     location: 'The Astor Place Theatre, lower Manhattan — November 6th, evening',
-    image: 'images/scene-06.png',
+    image: 'images/scene-06.jpeg',
     text: [
       'The Astor Place Theatre seats eight hundred people and appears tonight to contain considerably more. They are not here for the scheduled performance. They are here for the man who has taken up residence in the building — paid the stage manager in gold, the kind that makes people decide not to ask questions — and has been performing every evening since.',
       '\'The papers are calling him a gifted mesmerist,\' Maren says, in the carriage.',
@@ -201,7 +201,7 @@ const STORY = {
   'scene-7': {
     title: 'Chapter Seven: Cas and Pol',
     location: 'The twins\' apartment, Bleecker Street — November 8th, morning',
-    image: 'images/scene-07.png',
+    image: 'images/scene-07.jpeg',
     text: [
       'The twins\' apartment is one room on the second floor of a house that has not been painted in the lifetime of anyone living. The window looks onto Bleecker Street; the other window looks onto the wall of the house next door.',
       'They are sitting at the table when I arrive. Cas and Pol are perhaps nineteen, and their kind of beauty is the kind that makes strangers stop thinking. They stop talking when Blake enters behind me.',
@@ -245,7 +245,7 @@ const STORY = {
     type: 'quiz',
     constellation: 'Cancer',
     location: 'The twins\' apartment, Bleecker Street — November 8th, morning',
-    image: 'images/scene-07.png',
+    image: 'images/scene-07.jpeg',
     setup: [
       'Cas looks up. \'Does that mean something to you?\''
     ],
@@ -268,7 +268,7 @@ const STORY = {
   'interlude-1': {
     title: 'Interlude: After Bleecker Street',
     location: 'Louisa\'s office — November 9th–15th, evening',
-    image: 'images/scene-07.png',
+    image: 'images/scene-07.jpeg',
     text: [
       'The week after Bleecker Street splits into smaller moments:',
       'Blake sleeping on the settee because it is easier than him trying to rest in a city that is not his sky.',
@@ -287,7 +287,7 @@ const STORY = {
   'scene-vdz': {
     title: 'The Van der Zon Reception',
     location: 'The Van der Zon house, Fifth Avenue — November 13th, evening',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     text: [
       'The Van der Zon house has been in the same place on Fifth Avenue for two hundred years and has been designed, over those years, to make that fact legible from the street. The house of a family that intends to remain regardless of what the sky does.',
       'Hendrik Van der Zon is perhaps sixty, white-haired, courteous in the way that has never had to be otherwise. He shakes my hand and tells me he has heard of my work. I smile and thank him.',
@@ -303,7 +303,7 @@ const STORY = {
 
   'scene-vdz-c': {
     location: 'The Van der Zon house, second floor — continuous',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     text: [
       'I give him ninety seconds and excuse myself with a smile at Hendrik that I don\'t mean at all.',
       'The back of the house is older — colonial structure, narrower corridors, lower ceilings. The smell changes: stone and old paper and something metallic. My gift stirs with the attention it gives to things that matter.',
@@ -325,7 +325,7 @@ const STORY = {
 
   'scene-vdz-d': {
     location: 'The Van der Zon reception room — continuous',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     text: [
       'I stay. Hendrik fills twenty minutes with conversation that occupies all your attention and reveals very little. I pay attention and also track the signal he sends to a man near the far wall — a look, a tilt of the head — and the man leaves. I note the direction.',
       'Blake returns in twenty-two minutes. Nothing in his face has changed and everything in his face has changed. Something rearranged — not distress. The expression of a person who has received information that changes the shape of something they already believed, and is not yet certain what it means for everything that follows.',
@@ -343,7 +343,7 @@ const STORY = {
   'scene-8': {
     title: 'Chapter Eight: The Shape of the Thing',
     location: 'Louisa\'s office — November 16th, morning',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     text: [
       'Maren is outside the college at seven, which means she was there before seven and has been waiting. She has not slept.',
       '\'They broke in,\' she says. \'Last night, after I left. Went straight for the celestial research files — didn\'t touch anything else. They know I have it.\' She turns toward the entrance. \'I\'d already moved everything. But we need to finish this today, before they send someone who knows what they\'re looking for.\'',
@@ -376,7 +376,7 @@ const STORY = {
     type: 'quiz',
     constellation: 'Sagittarius',
     location: 'Columbia College sub-basement — November 16th, morning',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     setup: [
       'Four clues have accumulated: the westward movement, the fortune near Coloma, the reports from Cas and Pol\'s network, the field notes from the Lunardi archives. You see the pattern.'
     ],
@@ -400,7 +400,7 @@ const STORY = {
     type: 'quiz',
     constellation: 'Capricorn',
     location: 'Columbia College sub-basement — November 16th, morning',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     setup: [
       'The Compact notation is precise: a pattern of power that compounds within itself, privately held, across generations. The question is where such power lives and how to reach it.'
     ],
@@ -424,7 +424,7 @@ const STORY = {
     type: 'quiz',
     constellation: 'Pisces',
     location: 'Columbia College sub-basement — November 16th, morning',
-    image: 'images/scene-08.png',
+    image: 'images/scene-08.jpeg',
     setup: [
       'Three clues converge: Cas and Pol\'s impression of water and warmth, the Compact notation of a place at the world\'s edge, and the sailor\'s account from the Lunardi files. You have what you need.'
     ],
@@ -447,7 +447,7 @@ const STORY = {
   'scene-13': {
     title: 'Chapter Thirteen: What He Carries',
     location: 'The street near Columbia, then Louisa\'s office — November 16th, afternoon',
-    image: 'images/scene-09.png',
+    image: 'images/scene-09.jpeg',
     text: [
       'It happens on the way back from the college.',
       'We are crossing Amsterdam Avenue — Blake just ahead of me, Maren and Vesper half a block behind — when he stops walking.',
@@ -497,7 +497,7 @@ const STORY = {
   'scene-14': {
     title: 'Chapter Fourteen: The Fracture',
     location: 'Louisa\'s office — November 20th, evening',
-    image: 'images/scene-10.png',
+    image: 'images/scene-10.jpeg',
     text: [
       'Four days of momentum — Maren working through the original Compact line by line, Cas and Pol\'s network reaching the fallen we sent letters to, Vesper running interference on the Lunardi tail that keeps reappearing. Four days of thinking we might actually be doing this.',
       'On the morning of the twentieth, Cas and Pol go silent.',
@@ -550,7 +550,7 @@ const STORY = {
   'scene-15': {
     title: 'Chapter Fifteen: The Plan Interrupted',
     location: 'Louisa\'s office — November 22nd, evening',
-    image: 'images/scene-11.png',
+    image: 'images/scene-11.jpeg',
     text: [
       'Twenty minutes into the planning session, Vesper holds up one hand.',
       '\'Van der Zon man outside,\' she says, to the window. \'Delivering an envelope. Now leaving.\' She turns. \'He confirmed receipt and went. That\'s a family that knows what it\'s doing.\'',
@@ -579,7 +579,7 @@ const STORY = {
   'scene-16': {
     title: 'Chapter Sixteen: What Has to Be Done Alone',
     location: 'Trinity Church, crypt — November 24th, evening',
-    image: 'images/scene-12.png',
+    image: 'images/scene-12.jpeg',
     text: [
       'Trinity Church crypt smells of stone and preservation — the smell of a place that has been holding still for a long time. I am down here alone, which is how the ritual has to be. Four circles prepared — one for each of the two who need to come, one for the invocant, one for the witness.',
       'The witness is Maren. She is upstairs, keeping watch, watching the graveyard.',
@@ -607,7 +607,7 @@ const STORY = {
   'scene-17': {
     title: 'Chapter Seventeen: The Night Before',
     location: 'Louisa\'s office — November 25th, evening',
-    image: 'images/scene-13.png',
+    image: 'images/scene-13.jpeg',
     text: [
       'The office is full of all of them, in the last hours before midnight.',
       'Cas and Pol sitting at the table, holding hands. Leo standing by the window with the quality of someone who has made peace with an uncertain ending. Maren cataloguing the equipment one final time. Vesper checking the exits, the timing, the fallback positions. Emilio with two men — good men, Vesper confirms — who are loyal to the right definition of Lunardi interests.',
@@ -628,7 +628,7 @@ const STORY = {
   'scene-18': {
     title: 'Chapter Eighteen: The Invocation',
     location: 'Trinity Church graveyard — November 25th–26th, midnight–dawn',
-    image: 'images/scene-14.png',
+    image: 'images/scene-14.jpeg',
     text: [
       '[IF_PATH_C]',
       'In the final moment before the invocation begins, Emilio crosses to Mary and does not move from her side. He stands between her and the Van der Zon forces like he has already chosen what he will protect. Mary looks up at him and something in her settles.',
@@ -675,7 +675,7 @@ const STORY = {
   'ending-a': {
     title: 'Ending A: A New Sky',
     location: 'New York City — Winter, 1854',
-    image: 'images/ending-a.png',
+    image: 'images/ending-a.jpeg',
     text: [
       'By January, it becomes clear that the second sight is returning — not fully, not in everyone, but in a baseline way that human consciousness had forgotten. People dream more clearly. Doctors find it easier to diagnose. Children born in January and February have a quality of presence that startles the midwives.',
       'Louisa opens her office again. The rates have doubled, not because her gift has fully returned — it hasn\'t, not yet — but because people know something has changed. The city feels different. It feels like it\'s waking up from a long sleep.',
@@ -708,7 +708,7 @@ const STORY = {
   'ending-b': {
     title: 'Ending B: Worth It',
     location: 'New York City — Winter, 1854',
-    image: 'images/ending-b.png',
+    image: 'images/ending-b.jpeg',
     text: [
       'Three weeks after the invocation, Louisa\'s gift goes dark.',
       'Not gradually. Between one night and the next, the sight is gone. The pressure behind her left eye resolves into simple, ordinary pain. The visions cease.',
@@ -756,7 +756,7 @@ const STORY = {
   'ending-c': {
     title: 'Ending C: The Cost',
     location: 'New York City — Winter, 1854',
-    image: 'images/ending-c.png',
+    image: 'images/ending-c.jpeg',
     text: [
       'The price of the invocation is not paid in the graveyard.',
       'It is paid in the weeks that follow.',
@@ -807,7 +807,7 @@ const STORY = {
   'epilogue': {
     title: 'The Story Ends Here',
     location: 'And beyond...',
-    image: 'images/scene-14.png',
+    image: 'images/scene-14.jpeg',
     text: [
       'The full story of what happened in New York in the autumn of 1853 is known to only a handful of people.',
       'The newspapers reported atmospheric phenomena and possible mass hallucinations. The churches reported increased spirituality among the masses. The learned societies reported precisely nothing, having found no evidence of anything remarkable.',
