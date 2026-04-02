@@ -4,6 +4,7 @@ const STORY = {
     title: 'Before the Story Begins',
     location: 'New York City — October 12th, 1853',
     image: 'images/scene-00.jpeg',
+    showImage: true,
     text: [
       '*On the night of October 12th, 1853, eleven zodiacal constellations fell from the sky above the eastern seaboard. Sailors in New York Harbour lost their bearings before dawn. The Hudson ran strange.*',
       '*The newspapers called it atmospheric. The scientists convened a committee. The Fox Sisters called it exactly what it was, and were not believed.*',
@@ -21,6 +22,7 @@ const STORY = {
     title: 'Chapter One: The Client',
     location: 'Louisa\'s office, above Hartley\'s Books, Greenwich Village — November 3rd, morning',
     image: 'images/scene-01.jpeg',
+    showImage: true,
     text: [
       'The woman who comes to see me on the third of November is frightened of something specific, which is different from being grief-stricken, though she is performing the second to conceal the first.',
       'Her name is Helena Carver. Her husband, Charles, died three weeks ago at a séance on Bleecker Street. Heart failure, officially. She has the death certificate with her, which she shows me without being asked.',
@@ -69,6 +71,7 @@ const STORY = {
     title: 'Chapter Two: Five Points',
     location: 'Mulberry Street, Five Points — November 3rd, afternoon',
     image: 'images/scene-02.jpeg',
+    showImage: true,
     text: [
       'The building on Mulberry Street is a boarding house. The room on the third floor — where Charles Carver came to meet the fallen man — has been cleared out, not professionally. Whoever emptied it took only what they recognised.',
       'The door is unlocked. A pallet on the floor. A peg on the wall, empty. The smell of coal smoke and the river — and underneath, ozone. Something older. The smell makes the back of my teeth ache pleasantly, the way the real visions used to before they went wrong.',
@@ -86,6 +89,7 @@ const STORY = {
     title: 'Chapter Three: The Yards',
     location: 'Hudson River yards, lower Manhattan — November 3rd, late afternoon',
     image: 'images/scene-03.jpeg',
+    showImage: true,
     text: [
       'I almost don\'t go.',
       'I stand on West Street with the address in my notebook and think about my mother\'s room — the south window, the extra blanket — and what six weeks means in terms that are not abstract. The gift going dark doesn\'t just mean losing a skill. It means losing the income, and the income is the only thing standing between my mother and a worse room in a worse house. Then I step off the kerb and go, because the vision came without my consent and I have never managed to argue with the ones that arrive sideways.',
@@ -146,6 +150,7 @@ const STORY = {
     title: 'Chapter Four: Miss Voss',
     location: 'The Voss private library, Gramercy Park — November 4th, past midnight',
     image: 'images/scene-04.jpeg',
+    showImage: true,
     text: [
       'He finds me at half past midnight. I\'m awake — lying in the dark, not sleeping — when he knocks.',
       'He\'s standing in the hallway with his coat and a quality of controlled alarm, both palms glowing steadily gold in the lamplight.',
@@ -199,6 +204,7 @@ const STORY = {
     title: 'Chapter Five: Vesper',
     location: 'A rooftop, West 27th Street — November 5th, night',
     image: 'images/scene-05.jpeg',
+    showImage: true,
     text: [
       'The thief is not where Maren said she would be.',
       'The boarding house on Twenty-Third Street has a landlady who tells me her tenant left an hour ago on business. Blake locates the business — he describes it as a sense of purposeful recent movement through a space, a residue — across four streets and up a fire escape, to a rooftop where a small, sharp-featured woman is descending from a skylight on a rope, halfway between roof and third floor.',
@@ -244,6 +250,7 @@ const STORY = {
     title: 'Chapter Six: Leo',
     location: 'The Astor Place Theatre, lower Manhattan — November 6th, evening',
     image: 'images/scene-06.jpeg',
+    showImage: true,
     text: [
       'The Astor Place Theatre seats eight hundred people and appears tonight to contain considerably more. They are not here for the scheduled performance. They are here for the man who has taken up residence in the building — paid the stage manager in gold, the kind that makes people decide not to ask questions — and has been performing every evening since.',
       '\'The papers are calling him a gifted mesmerist,\' Maren says, in the carriage.',
@@ -280,7 +287,7 @@ const STORY = {
     image: 'images/scene-06.jpeg',
     text: [
       '\'That\'s fair,\' Leo says. \'More fair than I expected.\' He agrees, with conditions he then outlines in considerable detail — most of them concerning what happens to his people if the plan fails rather than if it succeeds. I write all of them down. When I look up, Blake is watching me with an expression that is there and then gone.',
-      'Before we leave, Leo tells us to find the twins and gives the Capricorn clue: \'He went where power is oldest — centuries of accumulated authority, something that compounds. A banking family. Somewhere very old and very certain of itself.\'',
+      'Before we leave, Leo tells us to find the twins. \'Cas and Pol have been in contact with more of the fallen than anyone,\' he says. \'If you want to know where the others are, they\'re your best route.\' He adds, at the door: \'Capricorn went where power is oldest — centuries of accumulated authority, something that compounds. A banking family. Somewhere very old and very certain of itself.\'',
     ],
     choices: [{ label: 'Continue', next: 'scene-7' }]
   },
@@ -299,6 +306,7 @@ const STORY = {
     title: 'Chapter Seven: Cas and Pol',
     location: 'The twins\' apartment, Bleecker Street — November 8th, morning',
     image: 'images/scene-07.jpeg',
+    showImage: true,
     text: [
       'The apartment on Bleecker Street has become something between a post office and a celestial archive. Letters pinned to the walls in overlapping layers, sorted into piles by a system that is either sophisticated or entirely intuitive. Small objects too: pressed flowers, compass needles, foreign coins. Things sent by people who live near where the fallen landed and have been paying attention.',
       'Pol opens the door before we knock. \'We heard you on the stairs,\' Cas says from inside, which does not fully explain it. Vesper, behind me, says under her breath: \'That\'s not how stairs work.\'',
@@ -346,6 +354,7 @@ const STORY = {
   'scene-7-after': {
     location: 'The twins\' apartment, Bleecker Street — November 8th, morning',
     image: 'images/scene-07.jpeg',
+    showImage: true,
     text: [
       'Blake is standing close enough that I can feel the faint warmth that comes off him even in cold rooms. He says, \'You\'re right,\' quietly, and I am momentarily unsure whether he means about the location or about the job, and I don\'t ask.',
       'Cas sends a letter in a cipher I don\'t ask about. Then Pol closes the notebook. \'We\'ll join you,\' he says. \'We\'ve been waiting for someone to ask.\'',
@@ -382,6 +391,7 @@ const STORY = {
   'interlude-1': {
     location: 'Bleecker Street to the West Village — November 9th',
     image: 'images/scene-07.jpeg',
+    showImage: true,
     text: [
       'We walk out together into the cold. The street is quiet in that particular way it gets after ten, when the restaurants have stopped seating and the bars haven\'t yet disgorged anyone. Blake walks beside me with his hands in his coat pockets and I don\'t quite know what to do with the fact that I\'m glad he\'s there.',
       'He says, after a while, \'You write everything down.\'',
@@ -390,8 +400,8 @@ const STORY = {
       '\'Especially those.\'',
       'He thinks about this. \'Why?\'',
       'I consider telling him about my mother, about the notebooks she kept and what happened when she stopped, but this isn\'t the moment for that. \'Because knowing and writing are different kinds of holding,\' I say instead. \'I want both.\'',
-      'He nods as though this is a satisfying answer. Somewhere above us, barely visible through the haze, something that might be Regulus sits low on the horizon. I think about Pol\'s chart and Cas\'s hands and the fact that Capricorn has gone somewhere that compounds. I think about what it means that Blake knew which way to look.',
-      'At the corner of Charles Street he says, \'Goodnight, Vee.\' I\'ve noticed he only uses that name when he means something by it. I notice I\'ve started watching for when he does.',
+      'He nods as though this is a satisfying answer. I think about Pol\'s chart and Cas\'s hands and the fact that Capricorn has gone somewhere that compounds. I think about what it means that Blake knew which way to look.',
+      'At the corner of Charles Street he says goodnight. I\'ve noticed a quality to certain of his words — the ones that carry more than they say. I notice I\'ve started watching for when they come.',
       '\'Goodnight,\' I say, and walk home alone.'
     ],
     choices: [{ label: 'Continue', next: 'scene-8' }]
@@ -400,6 +410,7 @@ const STORY = {
   'scene-8': {
     location: 'Maren\'s library, Gramercy Park — November 10th',
     image: 'images/scene-08.jpeg',
+    showImage: true,
     text: [
       'Maren\'s library is not a room so much as a commitment. Floor to ceiling, three walls, a rolling ladder on a brass rail, and every book organized according to a system she refuses to explain on the grounds that it is, in her words, \'too obvious to require articulation.\' I have never once found anything on the first try.',
       'Today she has laid out three copies of the Compact manifesto on the reading table. The original typeset, 1909. A carbon copy in someone\'s looping handwriting. And one I\'ve never seen before — bound in faded blue cloth, no author name, the pages thicker than they should be as though something had been pressed between them a long time ago.',
@@ -462,6 +473,7 @@ const STORY = {
   'scene-9': {
     location: 'The apartment, West Village — November 11th–12th',
     image: 'images/scene-09.jpeg',
+    showImage: true,
     text: [
       'Vesper\'s intelligence arrives in two parts. The first is a letter forwarded through three people, handwritten in her usual compressed script, outlining what she knows about Sagittarius\'s movements in the final years: a house in the Catskills, a post-office box in Rhinebeck, a series of withdrawals from a bank account that closed in 1959. The second is a photocopy of a carbon — barely legible — that she describes as \'Sagittarius writing to Pisces directly, in a register I\'ve only seen her use once before.\'',
       'The letter, once I\'ve read it twice, says this: the celestial copy of the manifesto was moved from 116th Street in 1943. It was given, temporarily, to someone called Leo. Vesper doesn\'t know who Leo was. But a Capricorn note, also enclosed — two lines on hotel stationery, undated — reads: *Leo keeps the original. The terrestrial copies are for our protection. Burn this.*',
@@ -481,6 +493,7 @@ const STORY = {
   'scene-vdz': {
     location: 'The Van der Zon reception, Upper East Side — November 14th',
     image: 'images/scene-10.jpeg',
+    showImage: true,
     text: [
       'The Van der Zons hold their reception in a townhouse on East 70th that makes no architectural concessions to the century. Pale stone, iron railings, a doorman who does not smile. Inside: toile wallpaper, Flemish landscapes, a chandelier with what appears to be actual candles, and sixty people in dark clothes speaking to one another in the particular register of the very old rich, which is to say: quietly, with long pauses, and absolute certainty that the room will wait.',
       'I am here because Maren called in a favor and got us both on the list. Blake is here because he apparently knows the younger Van der Zon son, Frederik, from some earlier chapter of his life that he has not explained. They greet each other in the hallway with the handshake of two people who shared an experience they are both glad is over.',
@@ -542,6 +555,7 @@ const STORY = {
   'scene-11': {
     location: 'The safehouse, Inwood — November 16th',
     image: 'images/scene-11.jpeg',
+    showImage: true,
     text: [
       'The address Pol gave us is a walk-up above a hardware store at the top of Manhattan, the last neighborhood before the island gives out to the bridge and the Bronx. I take the A train with Blake and we don\'t talk much on the way up, just sit with the file between us and the city getting quieter the further north we go.',
       'The apartment is small and cold and belongs to no one — a place of transit, used when needed, emptied between uses. There\'s a cot, a table, a hotplate, and a window that looks out over a bakery roof where a pigeon is engaged in the Sisyphean project of carrying a piece of bread somewhere it keeps dropping.',
@@ -612,6 +626,7 @@ const STORY = {
   'interlude-bowery': {
     location: 'The Bowery, walking south — late afternoon',
     image: 'images/scene-11.jpeg',
+    showImage: true,
     text: [
       'We take the train back and get off early, by unspoken agreement, and walk the last mile through the Bowery in the afternoon light that in November sits low and amber and makes even the scaffolding look intentional.',
       'Blake carries the box. I carry the notebook. I have not yet decided whether to tell him what the inner document said; I haven\'t decided how to carry it yet myself. He doesn\'t ask. He walks beside me with the box under his arm like it is simply the thing he is carrying today, and I think that this is one of the things I will remember about him when I am old: that he understood the difference between waiting and leaving.',
@@ -631,12 +646,12 @@ const STORY = {
   'scene-12': {
     location: 'Columbia University, Rare Books & Manuscripts — November 18th',
     image: 'images/scene-12.jpeg',
+    showImage: true,
     text: [
       'The Columbia archives hold what they hold and no more. I know this going in — Maren called ahead and confirmed that the papers from the 1959 gathering were donated by an anonymous family estate in 1971, that they are organized but not fully catalogued, and that I have three hours.',
       'I use all three.',
       'What I find: minutes from four Compact meetings, 1954 through 1959, written in a shorthand I have to decode against the Sagittarius letters Vesper sent. A photograph, unmounted, of seven people in a room I don\'t recognize — three women, four men, all looking at something to the left of the camera. On the back, in pencil: *The last good year.* A letter from Capricorn to Sagittarius, 1958, that begins: *I have been asked to stay. I have not yet decided whether staying is the same as remaining.* And a ledger page with a list of stars — common names, not coordinates — with small symbols next to each one I don\'t understand until the third hour, when I realize they are initials.',
-      'Leo\'s initial is beside Regulus.',
-      'Sagittarius\'s initial is beside the Archer\'s brightest star. Capricorn\'s is beside Algedi. And beside a star I\'ve been looking at in this story since the beginning — beside the one that is, I now understand, mine — is my mother\'s initial, in pencil, very faint, as though she pressed lightly because she wasn\'t sure she belonged.',
+      'Leo\'s initial is beside his constellation\'s brightest star. Sagittarius\'s initial is beside the Archer\'s brightest star. Capricorn\'s is beside Algedi. And beside a star I\'ve been looking at in this story since the beginning — beside the one that is, I now understand, mine — is my mother\'s initial, in pencil, very faint, as though she pressed lightly because she wasn\'t sure she belonged.',
       'I take photographs of everything. I sit for a moment in the cold archive room with my hands in my lap and let the weight of it settle.',
       'Then I go meet Blake at the gates and tell him we need to talk about Capricorn.'
     ],
@@ -673,6 +688,7 @@ const STORY = {
   'scene-13': {
     location: 'The apartment, West Village — November 19th',
     image: 'images/scene-13.jpeg',
+    showImage: true,
     text: [
       'I spread everything out on the floor. The photographs from the archive, the Vesper letters, the Sagittarius ledger page, the copy of the inner document from the celestial manuscript — which I have now read four times and which I have not shown anyone, including Blake.',
       'The picture I\'m building: the Compact gathered for the last time in December 1959. Twelve people. Four left before the end. The remaining eight agreed to something — and that something is written in the document in my hand. What they agreed to is this: that the Compact would not dissolve but disperse. That each member would carry their knowledge into a new shape, one that could survive outside the original structure. That the record would be kept by whoever came to claim it with the clearest right.',
@@ -744,6 +760,7 @@ const STORY = {
   'scene-14': {
     location: 'The apartment, West Village — November 20th',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'In the morning Pol calls. His voice is careful in the way it gets when something has shifted.',
       '\'Capricorn reached out,\' he says. \'Not through us. Through a family connected to the Van der Zons. He wants to meet — alone, without the full Compact structure, on his terms.\'',
@@ -802,6 +819,7 @@ const STORY = {
   'scene-15': {
     location: 'Private dining room, Midtown — November 21st',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'Capricorn is seventy-three, silver-haired, and occupies his chair like a man who has never once sat at the wrong table. He rises when I come in, which is a courtesy and also, I think, a signal: he intends this to be a meeting between equals.',
       'He says, \'I owe you an apology. I positioned myself where I thought I was most useful without asking whether it was useful to you.\'',
@@ -882,6 +900,7 @@ const STORY = {
   'scene-16': {
     location: 'Private dining room, Midtown — later',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'The meeting goes another hour.',
       'What Capricorn gives me: the names of the three surviving Compact lines. A sealed letter from Sagittarius. The identity of Leo\'s successor — a woman in her sixties in Red Hook who has been keeping what Leo left her without knowing what to do with it, waiting for someone to come. And an account of the 1959 meeting from his own memory, the only living memory that remains.',
@@ -958,6 +977,7 @@ const STORY = {
   'scene-17': {
     location: 'The apartment, West Village — November 22nd, the night before',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'The night before the gathering I can\'t sleep.',
       'This isn\'t unusual — I often can\'t sleep when something large is about to happen, and what\'s happening tomorrow is the largest thing I\'ve been part of. Maren has arranged the space: her library, the Gramercy Park townhouse, midnight. Capricorn will be there. Vesper\'s daughter, traveling from Philadelphia, who is the current Pisces line. The woman in Red Hook, who came when I called and said, simply, \'I\'ve been waiting.\' And Pol and Cas, who are not Compact members but who are, by now, part of whatever this is.',
@@ -981,6 +1001,7 @@ const STORY = {
   'scene-18': {
     location: 'Maren\'s library, Gramercy Park — November 23rd, midnight',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'Five of us around the reading table. Blake against the wall. The celestial manuscript in the center, still in its linen cloth.',
       'Maren has made tea that no one drinks. The windows are dark. The park outside is still.',
@@ -1046,6 +1067,7 @@ const STORY = {
   'scene-18-invocation': {
     location: 'Maren\'s library, Gramercy Park — later',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'The gathering takes three hours.',
       'We do not perform a ceremony. We do not take oaths. What we do is this: we take turns speaking about what we know, what we have been carrying, what we are placing into the shared record. Each person speaks and each person is heard, and Maren writes it all down in a long hand that will become the first document of the new practice.',
@@ -1065,6 +1087,7 @@ const STORY = {
   'ending-a': {
     location: 'Epilogue',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'The new practice takes shape slowly, the way careful things do.',
       'In January Maren hosts a second gathering: the same people, a new document begun. Aquila brings the objects Leo left her; we catalogue them together and begin to understand what they are — not relics, but evidence. A history made of small material things.',
@@ -1086,6 +1109,7 @@ const STORY = {
   'ending-b': {
     location: 'Epilogue',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'The practice begins quietly, the way I think it was always meant to.',
       'There are three of us in the first months who meet regularly: myself, Aquila from Red Hook, and the woman who is now Pisces-line and who has, I learn, been keeping a record of her own without knowing it was the Compact\'s tradition — she thought she was just someone who couldn\'t stop writing things down. I tell her that\'s exactly what the Compact is.',
@@ -1104,6 +1128,7 @@ const STORY = {
   'ending-c': {
     location: 'Epilogue',
     image: 'images/scene-14.jpeg',
+    showImage: true,
     text: [
       'What I know now that I didn\'t know in September:',
       'That some things take sixty years to find the right hands and that this is not a failure.',
