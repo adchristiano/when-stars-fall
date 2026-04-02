@@ -71,8 +71,8 @@ function buildSceneHTML(sceneId) {
     }
   }
 
-  // Image
-  if (scene.image) {
+  // Image — only on first page of each chapter
+  if (scene.image && scene.showImage) {
     html += `<div class="scene-image-wrap">
       <img class="scene-image" src="${scene.image}" alt=""
            onerror="this.closest('.scene-image-wrap').style.display='none'">
@@ -112,12 +112,6 @@ function buildQuizHTML(scene) {
 
   if (scene.location) {
     html += `<p class="scene-location">${scene.location}</p>`;
-  }
-  if (scene.image) {
-    html += `<div class="scene-image-wrap">
-      <img class="scene-image" src="${scene.image}" alt=""
-           onerror="this.closest('.scene-image-wrap').style.display='none'">
-    </div>`;
   }
   if (scene.setup) {
     html += renderText(scene.setup);
@@ -159,6 +153,22 @@ function renderText(textArray) {
     }
     if (para === '[IF_PATH_D]') {
       conditionalMode = state.pathC === 'D' ? 'show' : 'skip';
+      continue;
+    }
+    if (para === '[IF_PATH_I]') {
+      conditionalMode = state.pathI === 'I' ? 'show' : 'skip';
+      continue;
+    }
+    if (para === '[IF_PATH_II]') {
+      conditionalMode = state.pathI === 'II' ? 'show' : 'skip';
+      continue;
+    }
+    if (para === '[IF_PATH_E]') {
+      conditionalMode = state.pathE === 'E' ? 'show' : 'skip';
+      continue;
+    }
+    if (para === '[IF_PATH_F]') {
+      conditionalMode = state.pathE === 'F' ? 'show' : 'skip';
       continue;
     }
     if (para === '[END_IF]') {
@@ -246,10 +256,6 @@ function attachQuizHandlers(scene) {
 
       // Mark selected
       btn.classList.add(correct ? 'correct' : 'wrong');
-      if (!correct) {
-        const correctBtn = document.querySelector(`.quiz-option[data-index="${scene.correct}"]`);
-        if (correctBtn) correctBtn.classList.add('correct');
-      }
 
       // Award constellation
       if (correct) {
