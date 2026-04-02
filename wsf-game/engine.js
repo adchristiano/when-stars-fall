@@ -18,6 +18,13 @@ const state = {
 function goTo(sceneId, stateUpdates) {
   if (stateUpdates) Object.assign(state, stateUpdates);
 
+  // Special: resolve night-before scene based on constellation count
+  if (sceneId === '__night_before__') {
+    if (state.constellations >= 8) sceneId = 'scene-17a';
+    else if (state.constellations >= 5) sceneId = 'scene-17b';
+    else sceneId = 'scene-17c';
+  }
+
   // Special: resolve ending based on constellation count
   if (sceneId === '__ending__') {
     if (state.constellations >= 8) sceneId = 'ending-a';
