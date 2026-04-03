@@ -84,40 +84,72 @@ body {
   color: var(--text-muted);
 }
 
-/* ── Constellation Counter ── */
+/* ── Constellation Scoreboard ── */
 
-#constellation-counter {
+#scoreboard {
   position: fixed;
   top: 3.75rem;
   right: 1.75rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  color: var(--purple-mid);
   z-index: 100;
-  user-select: none;
   cursor: pointer;
-  transition: color 0.2s ease;
+  user-select: none;
+  text-align: right;
+  transition: opacity 0.2s ease;
 }
 
-#constellation-counter:hover {
+#scoreboard:hover .score-label,
+#scoreboard:hover .score-num {
   color: var(--purple-dark);
 }
 
-#stars-display {
-  display: inline-block;
-  transition: opacity 0.3s ease;
+.score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  line-height: 1.7;
 }
 
-#stars-display.pulse {
-  animation: starPulse 0.7s ease;
+.score-label {
+  font-family: var(--font);
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
 }
 
-@keyframes starPulse {
+.score-num {
+  font-family: var(--font);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--purple-mid);
+  min-width: 1.1em;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+.score-num.pulse {
+  animation: scorePulse 0.7s ease;
+}
+
+.score-num.betray-flash {
+  animation: betrayFlash 1.2s ease;
+}
+
+@keyframes scorePulse {
   0%   { opacity: 1; }
   30%  { opacity: 0.2; }
   60%  { opacity: 1; }
   80%  { opacity: 0.6; }
   100% { opacity: 1; }
+}
+
+@keyframes betrayFlash {
+  0%   { color: var(--purple-mid); }
+  20%  { color: var(--wrong); }
+  60%  { color: var(--wrong); }
+  100% { color: var(--purple-mid); }
 }
 
 /* ── Main Layout ── */
@@ -501,6 +533,38 @@ p.italic-para {
   font-size: 0.82rem;
 }
 
+.clog-faction-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purple-mid);
+  margin: 1.25rem 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--divider);
+  margin-bottom: 0;
+}
+
+.clog-faction-label:first-child {
+  margin-top: 0;
+}
+
+.clog-entry--vdz .clog-name-row,
+.clog-entry--lunardi .clog-name-row {
+  color: var(--text-muted);
+}
+
+.clog-entry--uncommitted .clog-name-row {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.clog-betrayed {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--wrong);
+  margin-top: 0.2rem;
+}
+
 .clog-location {
   font-size: 0.82rem;
   font-style: italic;
@@ -690,7 +754,7 @@ p.italic-para {
     font-size: 2.2rem;
   }
 
-  #constellation-counter {
+  #scoreboard {
     top: 3.5rem;
     right: 1.25rem;
   }
