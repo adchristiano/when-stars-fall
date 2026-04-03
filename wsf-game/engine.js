@@ -10,12 +10,54 @@ const state = {
   pathC: null,   // 'C' or 'D'  — Scene 10 (Follow vs Wait)
   pathE: null,   // 'E' or 'F'  — Scene 14 (Fight vs Reckon)
   constellations: 4,
-  quizDone: {}   // e.g. { cancer: true }
+  quizDone: {},  // e.g. { cancer: true }
+  history: [],   // stack of snapshots for ← back button
+  visited: []    // ordered list of { sceneId, title, location, snapshot } for TOC
 };
+
+// ── State Snapshots ──────────────────────────────────
+
+function snapshotState() {
+  return {
+    scene:         state.scene,
+    pathI:         state.pathI,
+    pathC:         state.pathC,
+    pathE:         state.pathE,
+    constellations: state.constellations,
+    quizDone:      Object.assign({}, state.quizDone)
+  };
+}
+
+function restoreSnapshot(snapshot) {
+  state.pathI         = snapshot.pathI;
+  state.pathC         = snapshot.pathC;
+  state.pathE         = snapshot.pathE;
+  state.constellations = snapshot.constellations;
+  state.quizDone      = Object.assign({}, snapshot.quizDone);
+  updateStarDisplay();
+}
 
 // ── Navigation ──────────────────────────────────────
 
 function goTo(sceneId, stateUpdates) {
+
+  // ── Back navigation ──────────────────────────────
+  if (sceneId === '__back__') {
+    if (state.history.length === 0) return;
+    const snapshot = state.history.pop();
+    restoreSnapshot(snapshot);
+    state.scene = snapshot.scene;
+    renderScene(snapshot.scene);
+    return;
+  }
+
+  // ── Record history before leaving current scene ──
+  const currentScene = STORY[state.scene];
+  if (currentScene && !currentScene.isTitleScreen && currentScene.type !== 'quiz') {
+    state.history.push(snapshotState());
+  }
+
+  // ── Apply state updates ──────────────────────────
   if (stateUpdates) Object.assign(state, stateUpdates);
 
   // Special: resolve night-before scene based on constellation count
@@ -34,6 +76,26 @@ function goTo(sceneId, stateUpdates) {
 
   state.scene = sceneId;
 
+  // ── Record visited chapters (scenes with a title) ─
+  const newScene = STORY[sceneId];
+  if (newScene && newScene.title && !newScene.isTitleScreen && newScene.type !== 'quiz') {
+    const alreadyVisited = state.visited.some(v => v.sceneId === sceneId);
+    if (!alreadyVisited) {
+      state.visited.push({
+        sceneId,
+        title:    newScene.title,
+        location: newScene.location || null,
+        snapshot: snapshotState()
+      });
+    }
+  }
+
+  renderScene(sceneId);
+}
+
+// ── Scene Renderer ────────────────────────────────────
+
+function renderScene(sceneId) {
   const content = document.getElementById('content');
   content.classList.add('fading');
 
@@ -41,6 +103,7 @@ function goTo(sceneId, stateUpdates) {
     content.innerHTML = buildSceneHTML(sceneId);
     content.classList.remove('fading');
     attachHandlers(sceneId);
+    updateNavUI();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, 350);
 }
@@ -310,9 +373,96 @@ function pulseStars() {
   el.classList.add('pulse');
 }
 
+// ── Nav UI (back button + TOC visibility) ─────────────
+
+function updateNavUI() {
+  const currentScene = STORY[state.scene];
+  const isQuiz       = currentScene && currentScene.type === 'quiz';
+  const isTitleScreen = currentScene && currentScene.isTitleScreen;
+
+  // Back button: visible when history has entries and we're not on a quiz or title screen
+  const backBtn = document.getElementById('back-btn');
+  if (backBtn) {
+    backBtn.style.display =
+      (state.history.length > 0 && !isQuiz && !isTitleScreen) ? '' : 'none';
+  }
+
+  // TOC button: visible once at least one titled chapter has been visited
+  const tocBtn = document.getElementById('toc-btn');
+  if (tocBtn) {
+    tocBtn.style.display = state.visited.length > 0 ? '' : 'none';
+  }
+}
+
+// ── Table of Contents ─────────────────────────────────
+
+function openTOC() {
+  const list = document.getElementById('toc-list');
+  list.innerHTML = '';
+
+  state.visited.forEach(entry => {
+    const btn = document.createElement('button');
+    btn.className = 'toc-entry';
+
+    let inner = `<span class="toc-title">${entry.title}</span>`;
+    if (entry.location) {
+      inner += `<span class="toc-location">${entry.location}</span>`;
+    }
+    btn.innerHTML = inner;
+
+    btn.addEventListener('click', () => {
+      closeTOC();
+      // Save current position to history so player can back out
+      const cur = STORY[state.scene];
+      if (cur && !cur.isTitleScreen && cur.type !== 'quiz') {
+        state.history.push(snapshotState());
+      }
+      // Restore the state as it was when this chapter was first reached
+      restoreSnapshot(entry.snapshot);
+      state.scene = entry.sceneId;
+      renderScene(entry.sceneId);
+    });
+
+    list.appendChild(btn);
+  });
+
+  document.getElementById('toc-overlay').classList.add('open');
+}
+
+function closeTOC() {
+  document.getElementById('toc-overlay').classList.remove('open');
+}
+
 // ── Boot ─────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
   updateStarDisplay();
+
+  // Back button
+  const backBtn = document.getElementById('back-btn');
+  if (backBtn) backBtn.addEventListener('click', () => goTo('__back__'));
+
+  // TOC open button
+  const tocBtn = document.getElementById('toc-btn');
+  if (tocBtn) tocBtn.addEventListener('click', openTOC);
+
+  // TOC close button
+  const tocClose = document.getElementById('toc-close');
+  if (tocClose) tocClose.addEventListener('click', closeTOC);
+
+  // Click outside TOC panel to close
+  const tocOverlay = document.getElementById('toc-overlay');
+  if (tocOverlay) {
+    tocOverlay.addEventListener('click', e => {
+      if (e.target === tocOverlay) closeTOC();
+    });
+  }
+
+  // Escape key closes TOC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeTOC();
+  });
+
+  updateNavUI();
   goTo('prologue');
 });
