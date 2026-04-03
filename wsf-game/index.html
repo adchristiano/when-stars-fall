@@ -21,8 +21,20 @@
     <span class="header-star" aria-hidden="true">✦</span>
   </header>
 
-  <div id="constellation-counter" aria-live="polite" aria-label="Signatures collected">
-    <span id="stars-display">✦ ✦ ✦ ✦</span>
+  <!-- Constellation scoreboard — click to open the log -->
+  <div id="scoreboard" role="button" tabindex="0" aria-label="Open constellation log">
+    <div class="score-row">
+      <span class="score-label">With you</span>
+      <span class="score-num" id="score-player">0</span>
+    </div>
+    <div class="score-row">
+      <span class="score-label">Van der Zon</span>
+      <span class="score-num" id="score-vdz">2</span>
+    </div>
+    <div class="score-row">
+      <span class="score-label">Lunardis</span>
+      <span class="score-num" id="score-lunardi">0</span>
+    </div>
   </div>
 
   <main id="game">
@@ -30,20 +42,6 @@
       <!-- Scene content is rendered here by engine.js -->
     </div>
   </main>
-
-  <!-- Constellation Log overlay -->
-  <div id="clog-overlay" role="dialog" aria-modal="true" aria-label="Constellation Signatures">
-    <div id="clog-panel">
-      <div id="clog-header">
-        <div>
-          <p class="toc-heading">Signatures</p>
-          <p id="clog-count" class="clog-count-line"></p>
-        </div>
-        <button id="clog-close" aria-label="Close">✕</button>
-      </div>
-      <div id="clog-list"></div>
-    </div>
-  </div>
 
   <!-- Back button -->
   <button id="back-btn" aria-label="Go back" style="display:none">Back</button>
@@ -56,6 +54,20 @@
         <button id="toc-close" aria-label="Close">✕</button>
       </div>
       <div id="toc-list"></div>
+    </div>
+  </div>
+
+  <!-- Constellation Log overlay -->
+  <div id="clog-overlay" role="dialog" aria-modal="true" aria-label="Constellation Signatures">
+    <div id="clog-panel">
+      <div id="clog-header">
+        <div>
+          <p class="toc-heading">Constellations</p>
+          <p id="clog-count" class="clog-count-line"></p>
+        </div>
+        <button id="clog-close" aria-label="Close">✕</button>
+      </div>
+      <div id="clog-list"></div>
     </div>
   </div>
 
