@@ -170,7 +170,8 @@ const STORY = {
       'She sets her pen down. Picks it up. Sets it down again. Then she looks at him with the focused, unsentimental interest of a scholar who has been pursuing a source for twenty years and has just been handed it.',
       '\'Sit down,\' she says. \'Both of you.\'',
       'She tells us: twenty years of celestial research; a theory about second sight and its dependence on the fallen constellations\' stability — which explains my gift\'s deterioration, with footnotes; and a gap in the record. A document, described only as the celestial terms, that arrived in New Amsterdam in 1624. The Lunardis currently hold it on Rector Street. \'If I can find the original,\' she says, \'I can prove that the document both families have been working from is a forgery. What the Van der Zons have been calling the Compact gives them permanent authority over every celestial decision. The real one gives the constellations the right to choose for themselves.\'',
-      'Something moves across Blake\'s face when she says celestial terms. Recognition, quickly shut. \'Tell her,\' he says quietly. \'She needs to know.\' \'That\'s what I\'m doing,\' Maren says, and picks up her pen.',
+      'Something moves across Blake\'s face when she says celestial terms. Recognition, quickly shut. \'Tell her,\' he says quietly. \'She needs to know.\'',
+      '\'That\'s what I\'m doing,\' Maren says, and picks up her pen.',
     ],
     choices: [
       { label: 'Let her share everything now. Conditions can come after.', next: 'scene-4-open-i' },
@@ -993,7 +994,9 @@ const STORY = {
     image: 'images/scene-16.jpeg',
     text: [
       'I follow one lead for three hours \u2014 a carriage rental, a boarding house, a dead end. My mother is not where I can reach her.',
-      'I arrive at the church late, in the dark, carrying the specific exhaustion of having done everything and found nothing. Blake meets me at the door. He takes my face in both hands and looks at me. \'She\'s all right,\' he says. \'You don\'t know that,\' I say. \'No,\' he says. \'But I know you.\' We go inside.',
+      'I arrive at the church late, in the dark, carrying the specific exhaustion of having done everything and found nothing. Blake meets me at the door. He takes my face in both hands and looks at me. \'She\'s all right,\' he says.',
+      '\'You don\'t know that,\' I say.',
+      '\'No,\' he says. \'But I know you.\' We go inside.',
     ],
     choices: [{ label: 'Continue', next: 'scene-16-night' }]
   },
