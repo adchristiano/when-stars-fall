@@ -111,7 +111,10 @@ function getConstellationFaction(c) {
       return 'player';
 
     case 'quiz':
-      return state.quizDone[c.key] ? 'player' : 'unmet';
+      if (state.quizDone[c.key]) return 'player';
+      // After the invocation, any unreached constellation is absorbed by Van der Zon
+      if (state.dynamicResolved) return 'vdz';
+      return 'unmet';
 
     case 'dynamic':
       if (!state.dynamicResolved) return 'uncommitted';
@@ -572,8 +575,9 @@ function openConstellationLog() {
 
   CONSTELLATION_CATALOGUE.forEach(c => {
     const faction = getConstellationFaction(c);
-    if (faction === 'unmet') return; // not yet encountered
-    const sec = sections.find(s => s.id === faction);
+    // 'unmet' (not yet encountered) folds into the "Allegiance unknown" section
+    const sectionId = faction === 'unmet' ? 'uncommitted' : faction;
+    const sec = sections.find(s => s.id === sectionId);
     if (sec) sec.items.push(c);
   });
 
