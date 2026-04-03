@@ -2,6 +2,63 @@
    WHEN STARS FALL — Game Engine
    ===================================================== */
 
+// ── Constellation Catalogue ───────────────────────────
+// Defines all possible signatures. quizKey: null = always earned (story).
+// quizKey = string: only shown when state.quizDone[key] is true.
+
+const CONSTELLATION_LOG = [
+  {
+    name:     'Scorpio',
+    aka:      'Blake',
+    location: 'Hudson River Yards, Manhattan',
+    desc:     'Hidden things. Depth. The knowledge that lives below the surface.',
+    quizKey:  null
+  },
+  {
+    name:     'Leo',
+    location: 'Astor Place Theatre, Manhattan',
+    desc:     'Presence, the crowd, performance. Eight hundred people, and they were there for him.',
+    quizKey:  null
+  },
+  {
+    name:     'Gemini',
+    aka:      'Cas and Pol',
+    location: 'Bleecker Street, Manhattan',
+    desc:     'Communication, translation. Two halves of a sentence.',
+    quizKey:  null
+  },
+  {
+    name:     'Virgo',
+    location: 'Confirmed — location undisclosed',
+    desc:     'Found settled ground in the first week and confirmed herself immediately. She has been waiting.',
+    quizKey:  null
+  },
+  {
+    name:     'Cancer',
+    location: 'The French Quarter, New Orleans',
+    desc:     'She feeds people. Far south, very warm, near the sea. She is exactly where she means to be.',
+    quizKey:  'cancer'
+  },
+  {
+    name:     'Sagittarius',
+    location: 'The Sierra Nevada, California',
+    desc:     'Moved west without stopping. The gold fields, the open ground.',
+    quizKey:  'sagittarius'
+  },
+  {
+    name:     'Capricorn',
+    location: 'New Court, London',
+    desc:     'Where power is oldest. Centuries of accumulated authority, something that compounds.',
+    quizKey:  'capricorn'
+  },
+  {
+    name:     'Pisces',
+    location: 'The Society Islands, Kingdom of Tahiti',
+    desc:     'Water in every direction. The difference between sky and sea becomes academic at certain hours.',
+    quizKey:  'pisces'
+  }
+];
+
 // ── Game State ──────────────────────────────────────
 
 const state = {
@@ -456,6 +513,47 @@ function closeTOC() {
   document.getElementById('toc-overlay').classList.remove('open');
 }
 
+// ── Constellation Log ─────────────────────────────────
+
+function openConstellationLog() {
+  const list = document.getElementById('clog-list');
+  list.innerHTML = '';
+
+  // Build the list of earned signatures
+  const earned = CONSTELLATION_LOG.filter(c =>
+    c.quizKey === null || state.quizDone[c.quizKey]
+  );
+
+  earned.forEach(c => {
+    const item = document.createElement('div');
+    item.className = 'clog-entry';
+
+    const nameLine = c.aka
+      ? `<span class="clog-name">${c.name}</span><span class="clog-aka"> — ${c.aka}</span>`
+      : `<span class="clog-name">${c.name}</span>`;
+
+    item.innerHTML = `
+      <div class="clog-name-row">✦ ${nameLine}</div>
+      <div class="clog-location">${c.location}</div>
+      <div class="clog-desc">${c.desc}</div>
+    `;
+    list.appendChild(item);
+  });
+
+  // Count line
+  const total = 8;
+  const count = document.getElementById('clog-count');
+  if (count) {
+    count.textContent = `${earned.length} of ${total} signatures`;
+  }
+
+  document.getElementById('clog-overlay').classList.add('open');
+}
+
+function closeConstellationLog() {
+  document.getElementById('clog-overlay').classList.remove('open');
+}
+
 // ── Boot ─────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -481,10 +579,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Escape key closes TOC
+  // Escape key closes TOC or constellation log
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeTOC();
+    if (e.key === 'Escape') { closeTOC(); closeConstellationLog(); }
   });
+
+  // Constellation counter opens the log
+  const counter = document.getElementById('constellation-counter');
+  if (counter) counter.addEventListener('click', openConstellationLog);
+
+  // Constellation log close button
+  const clogClose = document.getElementById('clog-close');
+  if (clogClose) clogClose.addEventListener('click', closeConstellationLog);
+
+  // Click outside constellation log panel to close
+  const clogOverlay = document.getElementById('clog-overlay');
+  if (clogOverlay) {
+    clogOverlay.addEventListener('click', e => {
+      if (e.target === clogOverlay) closeConstellationLog();
+    });
+  }
 
   updateNavUI();
   goTo('prologue');
