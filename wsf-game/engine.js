@@ -10,7 +10,8 @@ const state = {
   pathC: null,   // 'C' or 'D'  — Scene 10 (Follow vs Wait)
   pathE: null,   // 'E' or 'F'  — Scene 14 (Fight vs Reckon)
   constellations: 4,
-  quizDone: {},  // e.g. { cancer: true }
+  quizDone:     {},  // e.g. { sagittarius: true } — snapshotted
+  quizAnswered: {},  // e.g. { sagittarius: { correct: true } } — NOT snapshotted; persists across back navigation
   history: [],   // stack of snapshots for ← back button
   visited: []    // ordered list of { sceneId, title, location, snapshot } for TOC
 };
@@ -19,12 +20,13 @@ const state = {
 
 function snapshotState() {
   return {
-    scene:         state.scene,
-    pathI:         state.pathI,
-    pathC:         state.pathC,
-    pathE:         state.pathE,
+    scene:          state.scene,
+    pathI:          state.pathI,
+    pathC:          state.pathC,
+    pathE:          state.pathE,
     constellations: state.constellations,
-    quizDone:      Object.assign({}, state.quizDone)
+    quizDone:       Object.assign({}, state.quizDone)
+    // quizAnswered intentionally omitted — it survives back navigation
   };
 }
 
@@ -73,6 +75,23 @@ function goTo(sceneId, stateUpdates) {
     else if (state.constellations >= 5) sceneId = 'ending-b';
     else sceneId = 'ending-c';
   }
+
+  // Auto-bypass quiz scenes the player has already answered.
+  // quizAnswered is not snapshotted, so going back never clears it.
+  // Handles chained quizzes (e.g. sagittarius → capricorn → pisces).
+  while (true) {
+    const dest = STORY[sceneId];
+    if (!dest || dest.type !== 'quiz') break;
+    const key = dest.constellation.toLowerCase();
+    if (!state.quizAnswered[key]) break;
+    // Re-award constellation if they got it right and it's not yet counted
+    if (state.quizAnswered[key].correct && !state.quizDone[key]) {
+      state.constellations += 1;
+      state.quizDone[key] = true;
+    }
+    sceneId = dest.next;
+  }
+  updateStarDisplay();
 
   state.scene = sceneId;
 
@@ -327,10 +346,14 @@ function attachQuizHandlers(scene) {
       // Mark selected
       btn.classList.add(correct ? 'correct' : 'wrong');
 
+      // Record that this quiz has been answered (survives back navigation)
+      const quizKey = scene.constellation.toLowerCase();
+      state.quizAnswered[quizKey] = { correct };
+
       // Award constellation
       if (correct) {
         state.constellations += 1;
-        state.quizDone[scene.constellation.toLowerCase()] = true;
+        state.quizDone[quizKey] = true;
         pulseStars();
       }
 
