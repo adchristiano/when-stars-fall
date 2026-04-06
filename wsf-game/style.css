@@ -559,6 +559,11 @@ p.italic-para {
   font-style: italic;
 }
 
+.clog-location--unknown {
+  color: var(--purple-faint);
+  font-style: italic;
+}
+
 .clog-betrayed {
   font-size: 0.78rem;
   font-style: italic;
