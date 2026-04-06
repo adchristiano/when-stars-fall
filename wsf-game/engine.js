@@ -602,9 +602,15 @@ function openConstellationLog() {
         ? `<div class="clog-betrayed">Defected to the Van der Zons at the invocation.</div>`
         : '';
 
+      // Don't show location for unmet quiz constellations — it's the quiz answer
+      const isUnmetQuiz = sec.id === 'uncommitted' && c.type === 'quiz';
+      const locationHTML = isUnmetQuiz
+        ? `<div class="clog-location clog-location--unknown">Whereabouts unknown</div>`
+        : `<div class="clog-location">${c.location}</div>`;
+
       item.innerHTML = `
         <div class="clog-name-row">${marker} ${nameLine}</div>
-        <div class="clog-location">${c.location}</div>
+        ${locationHTML}
         ${sec.id !== 'uncommitted' ? `<div class="clog-desc">${c.desc}</div>` : ''}
         ${betrayedNote}
       `;
